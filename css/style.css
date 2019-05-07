@@ -1,0 +1,81 @@
+h1 {
+  text-transform: uppercase;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+}
+
+.bg1 {
+  background-color: white;
+  color: black;
+  margin-top: 0;
+}
+
+#carou {
+  background-color: white;
+  color: black;
+}
+
+.img {
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* fin nav */
+.img_caroussel {
+  width: 500px;
+  height: 700px;
+  object-fit: cover;
+}
+
+.carousel {
+  position: relative;
+  background: white;
+  padding-bottom: 2%;
+}
+
+.carousel-cell {
+  width: auto;
+  height: auto;
+  margin-right: 15px;
+  background: transparent;
+  counter-increment: gallery-cell;
+}
+
+.carousel-cell.is-selected {}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+.parallax-window {
+  min-height: 450px;
+  background: transparent;
+}
+
+/* content */
+#img_content {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.flickity-page-dots {
+  display: none;
+}
+
+
+/*----------------------------------
+  ----------media query----------------
+  ----------------------------------*/
+@media only screen and (max-width: 1199px) {}
+
+@media only screen and (max-width: 880px) {
+  @media only screen and (max-width: 767px) {}
+
+  @media only screen and (max-width: 576px) {}
+
+  @media only screen and (max-width: 576px) {}
