@@ -3,6 +3,14 @@ body {
   padding: 0;
   overflow-x: hidden;
   box-sizing: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+html, body {
+height: 100%;
+padding: 0;
+margin: 0;
 }
 
 /********************************** HEADER ***********************************/
@@ -59,7 +67,6 @@ body {
   border-top: solid 5px #4747478a;
   border-bottom: solid 5px #4747478a;
   margin-bottom: 200px;
-  margin-left: 20px;
 }
 
 .menu_films_portable {
@@ -154,7 +161,7 @@ button {
 /********************************** LIENS FILMS ***********************************/
 .liens_films {
   overflow: hidden;
-  border-radius: 15px 0px 0px 15px;
+  border-radius: 15px 15px 15px 15px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -164,6 +171,7 @@ button {
   border-left: solid 5px #4747478a;
   border-top: solid 5px #4747478a;
   border-bottom: solid 5px #4747478a;
+  border-right: solid 5px #4747478a;
   margin-bottom: 50px;
   margin-right: 20px;
 }
