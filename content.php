@@ -27,7 +27,7 @@
 
 
   <?php
-  $bdd = new PDO('mysql:host=localhost;dbname=allocine;charset=utf8', 'root', '');
+  $bdd = new PDO('mysql:host=localhost;dbname=allocine;charset=utf8', 'luni', 'linkels');
   $requete = "SELECT * FROM film WHERE id=" . $_GET["id"];
   $reponse = $bdd->query($requete);
   while ($donnees = $reponse->fetch())
@@ -73,21 +73,21 @@
       <div class="col-10 col-sm-10 col-md-10 col-lg-4 col-xl-5">
 
         <div class="list-group">
-          <a href="realisateur.php?id=<?php echo $donnees["id"];?>" class="list-group-item list-group-item-action">
+           <div class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">Réalisateur</h5>
             </div>
 
             <p class="mb-1">
-
+              <a href="realisateur.php?id=<?php echo $donnees["id"];?>"
               <?php
 
                 echo'<p>' . $donnees['Realisateur'] . '</p>';
 
             ?>
-
-              </small>
           </a>
+              </small>
+          </div>
           <a href="#" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">Production</h5>

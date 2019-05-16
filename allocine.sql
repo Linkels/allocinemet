@@ -38,7 +38,6 @@ CREATE TABLE `film` (
   `image` varchar(255) NOT NULL,
   `lien` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 --
 -- Déchargement des données de la table `film`
 --

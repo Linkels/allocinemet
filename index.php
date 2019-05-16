@@ -24,7 +24,7 @@
 </head>
 
 <?php
-$bdd = new PDO('mysql:host=localhost;dbname=allocine;charset=utf8', 'root', '');
+$bdd = new PDO('mysql:host=localhost;dbname=allocine;charset=utf8', 'luni', 'linkels');
 $requete = "SELECT * FROM film";
 $reponse = $bdd->query($requete);
 ?>

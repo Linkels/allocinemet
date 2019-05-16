@@ -20,7 +20,7 @@
 
   <?php
 $bdd = new PDO('mysql:host=localhost;dbname=allocine;charset=utf8', 'luni', 'linkels');
-$requete = "SELECT * FROM film";
+$requete = "SELECT * FROM genre";
 $reponse = $bdd->query($requete);
 ?>
 
@@ -51,7 +51,7 @@ $reponse = $bdd->query($requete);
 
           <button>Rechercher</button>
 
-          <li><a href="action.php" class="collapsible">Action</a>
+          <li><a href="#" class="collapsible">Action</a>
           </li>
           <li><a href="#" class="collapsible">Science-fiction</a>
           </li>
@@ -59,7 +59,7 @@ $reponse = $bdd->query($requete);
           </li>
           <li><a href="#" class="collapsible">Drame</a>
           </li>
-          <li><a href="animation.php" class="collapsible">Animation</a>
+          <li><a href="#" class="collapsible">Animation</a>
           </li>
           <li><a href="#" class="collapsible">Horreur</a>
           </li>
