@@ -27,7 +27,7 @@
 
 
   <?php
-  $bdd = new PDO('mysql:host=localhost;dbname=allocine;charset=utf8', 'luni', 'linkels');
+$bdd = new PDO('mysql:host=localhost;dbname=allocine;charset=utf8', 'root', '');
   $requete = "SELECT * FROM film WHERE id=" . $_GET["id"];
   $reponse = $bdd->query($requete);
   while ($donnees = $reponse->fetch())
