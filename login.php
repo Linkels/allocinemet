@@ -1,43 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-  <link src="css/animate.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/animate.css">
-  <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
+
+<?php
+
+//login.php
+
+/**
+ * Start the session.
+ */
+session_start();
+
+/**
+ * Include ircmaxell's password_compat library.
+ */
+
+
+/**
+ * Include our MySQL connection.
+ */
+require 'connect.php';
+
+
+//If the POST var "login" exists (our submit button), then we can
+//assume that the user has submitted the login form.
+if(isset($_POST['login'])){
+
+    //Retrieve the field values from our login form.
+    $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
+    $passwordAttempt = !empty($_POST['password']) ? trim($_POST['password']) : null;
+
+    //Retrieve the user account information for the given username.
+    $sql = "SELECT id, username, password FROM users WHERE username = :username";
+    $stmt = $pdo->prepare($sql);
+
+    //Bind value.
+    $stmt->bindValue(':username', $username);
+
+    //Execute.
+    $stmt->execute();
+
+    //Fetch row.
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    //If $row is FALSE.
+    if($user === false){
+        //Could not find a user with that username!
+        //PS: You might want to handle this error in a more user-friendly manner!
+        die('Incorrect username / password combination!');
+    } else{
+        //User account found. Check to see if the given password matches the
+        //password hash that we stored in our users table.
+
+        //Compare the passwords.
+        $validPassword = password_verify($passwordAttempt, $user['password']);
+
+        //If $validPassword is TRUE, the login has been successful.
+        if($validPassword){
+
+            //Provide the user with a login session.
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['logged_in'] = time();
+
+            //Redirect to our protected page, which we called home.php
+            header('Location: home.php');
+            exit;
+
+        } else{
+            //$validPassword was FALSE. Passwords do not match.
+            die('Incorrect username / password combination!');
+        }
+    }
+
+}
+
+?>
+
+
+
 <body>
-    <?php include "header.php";?>
 
-<div id="login "class="wrapper fadeInDown">
-  <div id="formContent">
-    <!-- Tabs Titles -->
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Login</title>
+        </head>
+        <body>
+            <h1>Login</h1>
+            <form action="login.php" id="login" method="post">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username"><br>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password"><br>
+                <input type="submit" name="login" value="Login">
+            </form>
+        </body>
+        <a href="index.php">index</a>
+    </html>
 
-    <!-- Icon -->
-    <div class="fadeIn first">
-      <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
-    </div>
 
-    <!-- Login Form -->
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
-    </form>
-  </div>
-</div>
-
-  <?php include "footer.php";?>
 
 </body>

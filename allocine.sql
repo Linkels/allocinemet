@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  lun. 13 mai 2019 à 11:18
--- Version du serveur :  10.1.38-MariaDB
--- Version de PHP :  7.3.4
+-- Généré le :  lun. 20 mai 2019 à 13:21
+-- Version du serveur :  10.1.39-MariaDB
+-- Version de PHP :  7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -38,6 +38,7 @@ CREATE TABLE `film` (
   `image` varchar(255) NOT NULL,
   `lien` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Déchargement des données de la table `film`
 --
@@ -52,7 +53,13 @@ INSERT INTO `film` (`id`, `titre`, `synopsis`, `Realisateur`, `Product`, `Acteur
 (7, 'Asterix', 'fgdsfjgrtfgntr', '0', 'gfhjtfkhtykrhjktygkhtyo', 'hkftyghfdfjgrt\r\n\r\n\r\n\r\n', '7.jpg', 'https://www.youtube.com/embed/klnu4ps7C8w'),
 (8, 'Nous finirons ensemble', 'sdsfhgkkl-ktyre', '0', 'jklhytrjgkytj', 'jfklkyjtkjjgtkru-t', '8.jpg', 'https://www.youtube.com/embed/RjfF0V5blEE'),
 (9, 'La dame blanche', 'gdfhjlkm!lmjkhyjgtfh', '0', 'hrtjkumlu:iyjuylkgfb', 'hdrtjky,hu;j:khèyulgh', '9.jpg', 'https://www.youtube.com/embed/NlVWRyA8eAc'),
-(10, 'Dumbo', 'vfgehrfj,trfgrcvn', '0', 'gfd,gfrbt fb,; gff', ',cgfbngf,cv\r\n\r\n\r\n', '10.jpg', 'https://www.youtube.com/embed/G-Ldfp_5lmg');
+(10, 'Dumbo', 'vfgehrfj,trfgrcvn', '0', 'gfd,gfrbt fb,; gff', ',cgfbngf,cv\r\n\r\n\r\n', '10.jpg', 'https://www.youtube.com/embed/G-Ldfp_5lmg'),
+(11, 'Matrix', 'ZQERDTHFJGKLMLKM', 'lES FRERES WATCHOVSKY', 'QFSDGFHGJGJKKLJM', 'KEANU REEVES', '11.png', 'https://www.youtube.com/embed/hIjeGNy8jKc'),
+(12, 'titre', 'sss', 'sss', 'ssss', 'sss', '', 'sss'),
+(13, 'titre', 'sss', 'sss', 'ssss', 'sss', '', 'sss'),
+(14, 'titre', 'sss', 'sss', 'ssss', 'sss', '', 'sss'),
+(15, 'test', 'test', 'test', 'test', 'test', '', 'test'),
+(16, 'dertfygu', 'dtfyguihjkl', 'drtfyguhij', 'rdtfyguhij', 'esrdtfyguh', '', 'rdtfyguhijokl');
 
 -- --------------------------------------------------------
 
@@ -75,7 +82,20 @@ CREATE TABLE `realisateur` (
 
 INSERT INTO `realisateur` (`id`, `Nom`, `Naissance`, `Filmographie`, `Biographie`, `img`) VALUES
 (1, 'Les frères Russo', 'Naissance', 'Filmo', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n', 'russo.png'),
-(2, 'Steven Caple Jr', 'Naissance2', 'Filmo2', 'Bio2', 'Caple.png');
+(2, 'Steven Caple Jr', 'Naissance2', 'Filmo2', 'Bio2', 'Caple.png'),
+(11, 'Les Freres Watchovsky', '1990', '2', 'esrdtyjuiom', 'watchovsky.png');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `username` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(60) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Index pour les tables déchargées
@@ -94,6 +114,13 @@ ALTER TABLE `realisateur`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -101,13 +128,19 @@ ALTER TABLE `realisateur`
 -- AUTO_INCREMENT pour la table `film`
 --
 ALTER TABLE `film`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT pour la table `realisateur`
 --
 ALTER TABLE `realisateur`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT pour la table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
