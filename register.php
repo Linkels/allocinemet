@@ -1,4 +1,5 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <?php
 
 //register.php
@@ -78,7 +79,7 @@ if(isset($_POST['register'])){
 }
 
 ?>
-<!DOCTYPE html>
+
 <html>
     <head>
         <meta charset="UTF-8">
