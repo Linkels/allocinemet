@@ -18,8 +18,8 @@
     <div class="nav-links">
       <a href="allo_films.php">FILMS</a>
       <a href="contact.php">CONTACT</a>
-      <a href="login.php">Login</a>
       <a href="Register.php">Register</a>
+      <a href="login.php">Login</a>
     </div>
   </div>
 </header>
