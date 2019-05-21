@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  lun. 20 mai 2019 à 13:21
+-- Généré le :  mar. 21 mai 2019 à 11:28
 -- Version du serveur :  10.1.39-MariaDB
 -- Version de PHP :  7.3.5
 
@@ -54,12 +54,19 @@ INSERT INTO `film` (`id`, `titre`, `synopsis`, `Realisateur`, `Product`, `Acteur
 (8, 'Nous finirons ensemble', 'sdsfhgkkl-ktyre', '0', 'jklhytrjgkytj', 'jfklkyjtkjjgtkru-t', '8.jpg', 'https://www.youtube.com/embed/RjfF0V5blEE'),
 (9, 'La dame blanche', 'gdfhjlkm!lmjkhyjgtfh', '0', 'hrtjkumlu:iyjuylkgfb', 'hdrtjky,hu;j:khèyulgh', '9.jpg', 'https://www.youtube.com/embed/NlVWRyA8eAc'),
 (10, 'Dumbo', 'vfgehrfj,trfgrcvn', '0', 'gfd,gfrbt fb,; gff', ',cgfbngf,cv\r\n\r\n\r\n', '10.jpg', 'https://www.youtube.com/embed/G-Ldfp_5lmg'),
-(11, 'Matrix', 'ZQERDTHFJGKLMLKM', 'lES FRERES WATCHOVSKY', 'QFSDGFHGJGJKKLJM', 'KEANU REEVES', '11.png', 'https://www.youtube.com/embed/hIjeGNy8jKc'),
-(12, 'titre', 'sss', 'sss', 'ssss', 'sss', '', 'sss'),
-(13, 'titre', 'sss', 'sss', 'ssss', 'sss', '', 'sss'),
-(14, 'titre', 'sss', 'sss', 'ssss', 'sss', '', 'sss'),
-(15, 'test', 'test', 'test', 'test', 'test', '', 'test'),
-(16, 'dertfygu', 'dtfyguihjkl', 'drtfyguhij', 'rdtfyguhij', 'esrdtfyguh', '', 'rdtfyguhijokl');
+(11, 'Matrix', 'fxc', 'lES FRERES WATCHOVSKY', 'cxbv', 'KEANU REEVES', '11.png', 'https://www.youtube.com/embed/hIjeGNy8jKc');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `info`
+--
+
+CREATE TABLE `info` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `address` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -98,6 +105,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`) VALUES
+(6, 'Admin', '$2y$12$BO.b7e0HJAYksTcrvUD2VuhkTaXQyfpMPWjrXcVCyIHBE2kh63KZO');
+
+--
 -- Index pour les tables déchargées
 --
 
@@ -105,6 +119,12 @@ CREATE TABLE `users` (
 -- Index pour la table `film`
 --
 ALTER TABLE `film`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `info`
+--
+ALTER TABLE `info`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -128,7 +148,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `film`
 --
 ALTER TABLE `film`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+
+--
+-- AUTO_INCREMENT pour la table `info`
+--
+ALTER TABLE `info`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `realisateur`
@@ -140,7 +166,7 @@ ALTER TABLE `realisateur`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
