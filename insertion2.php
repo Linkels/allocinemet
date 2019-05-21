@@ -30,7 +30,7 @@ if (!$conn) {
 
   //exécution de la requête SQL:
   if (mysqli_query($conn, $sql)) {
-      echo "New record created successfully";
+      echo "Reussite";
   } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }

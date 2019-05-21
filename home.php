@@ -30,7 +30,7 @@ echo 'Congratulations! You are logged in!';
 
 <html>
   <head>
-    <title>insertion de données en PHP :: partie 1</title>
+    <title></title>
   </head>
 <body>
 <form name="insertion" action="insertion2.php" method="POST">
