@@ -20,6 +20,8 @@
       <a href="contact.php">CONTACT</a>
       <a href="Register.php">Register</a>
       <a href="login.php">Login</a>
+      <a href="home.php">ADMIN</a>
+      <a href="deconnexion.php">Déconnexion</a>
     </div>
   </div>
 </header>
