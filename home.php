@@ -140,6 +140,8 @@ echo 'Congratulations! You are logged in!';
   <form>
     <a href="index.php"><button type="button" name="button">index</button></a>
     <a href="allo_films.php"><button type="button" name="button">FILMS</button></a>
+
+    <a href="deconnexion.php"><button type="button" name="button">Déco</button></a>
 </body>
 
 </html>
