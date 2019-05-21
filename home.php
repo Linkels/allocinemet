@@ -107,6 +107,7 @@ if(!isset($_SESSION['user_id']) || !isset($_SESSION['logged_in'])){
   <table>
     <thead>
       <tr>
+      <th>ID</th>
         <th>titre</th>
         <th>synopsis</th>
         <th>Realisateur</th>
@@ -119,6 +120,7 @@ if(!isset($_SESSION['user_id']) || !isset($_SESSION['logged_in'])){
 
     <?php while ($row = mysqli_fetch_array($results)) { ?>
     <tr>
+      <td><?php echo $row['id']; ?></td>
       <td><?php echo $row['titre']; ?></td>
       <td><?php echo $row['synopsis']; ?></td>
       <td><?php echo $row['Realisateur']; ?></td>
